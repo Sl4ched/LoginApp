@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,700;1,400&family=Lexend+Deca&family=Overpass&display=swap');
+
+.flex {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: -40px 0 0 0;
+}
+
+.flexRow {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin: 20px 0 0 0;
+    min-width: 300px;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #224957;
+    font-size : 3rem
+}
+
+.coloring {
+    color: #224957;
+}
+
+.txtfield {
+    margin: 25px 0 0 0;
+    background-color: #224957;
+    border-radius: 5px;
+    border : none;
+    outline: none;
+    min-width: 280px;
+    color: white;
+    padding: 12px 0 12px 15px;
+}
+
+::placeholder {
+    color : white;
+    opacity: 1;
+}
+
+label {
+    font-size: 0.9rem;
+    position: relative;
+    top: -3px;
+}
+
+a {
+    font-size: 0.9rem;
+    color: black;
+    text-decoration: none;
+}
+
+.checkbox {
+    height: 17px;
+    width: 17px;
+    accent-color: #224957;
+
+}
+
+button {
+    margin: 20px 0 0 0;
+    min-width: 300px;
+    background-color: #20DF7F;
+    border-radius: 7px;
+    border: none;
+    height: 35px;
+    font-weight: 700;
+}
+
+img {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #19b665;
+}
+
+#passwordRight{
+    margin: 15px 0 0 0;
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #ff3131;
+}
+

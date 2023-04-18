@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+
+<%
+const emailArray = []
+const passwordArray = []
+
+all_data.forEach(value => emailArray.push(value.email))
+all_data.forEach(value => passwordArray.push(value.password))
+%>
+<form>
+
+    <div class="flex">
+
+        <h1>Login</h1>
+
+        <div class="coloring">Login and start managing your candidates!</div>
+
+        <div>
+            <label for="email"></label>
+            <input value="" placeholder="E-mail" class="txtfield" id="email" type="text" required>
+        </div>
+
+        <div>
+            <label for="password"></label>
+            <input value="" placeholder="Password" class="txtfield" id="password" type="password" required>
+        </div>
+
+        <div class="flexRow">
+            <div>
+                <input class="checkbox" id="isRemember" type="checkbox">
+                <label class="coloring" for="isRemember">Remember me</label>
+            </div>
+            <a href="#">Forgot Password?</a>
+        </div>
+
+        <button data-email="<%= emailArray %>" data-password="<%= passwordArray %>" type="button" class="btn coloring">
+            Login
+        </button>
+        <div id="passwordRight"></div>
+
+        <img alt="photo" src="Vectors.png"/>
+    </div>
+
+</form>
+
+<script>
+    const btn = document.querySelector('.btn')
+    const email = document.querySelector('#email')
+    const password = document.querySelector('#password')
+    const passwordRight = document.querySelector('#passwordRight')
+
+    let email_value
+    let password_value
+
+    email.addEventListener('change', (e) => {
+        email_value = e.target.value
+    })
+
+    password.addEventListener('change', (e) => {
+        password_value = e.target.value
+    })
+
+    let isLoginSuccess = false
+
+    const dataEmail = btn.dataset.email
+    const dataPassword = btn.dataset.password
+
+    btn.addEventListener('click', () => {
+
+        const arrayOfEmails = dataEmail.split(',')
+        const arrayOfPasswords = dataPassword.split(',')
+
+        if (email_value !== undefined && password_value !== undefined) {
+
+            arrayOfEmails.forEach((valueE, indexE) => {
+
+                arrayOfPasswords.forEach((valueP, indexP) => {
+
+                    if (indexP === indexE) {
+                        if (valueE === email_value && valueP === password_value) isLoginSuccess = true
+                    }
+
+                })
+
+            })
+            if (isLoginSuccess) {
+                isLoginSuccess = false
+                window.location.href = '/login/login_success'
+            }
+            else passwordRight.innerHTML = 'Email or password is incorrect'
+
+        }else { passwordRight.innerHTML = 'Please fill the both section'}
+
+    })
+
+</script>
+
+</body>
+</html>
