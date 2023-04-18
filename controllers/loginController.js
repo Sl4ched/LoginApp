@@ -7,10 +7,6 @@ const create_login = (req, res) => {
         .catch(err => console.log(err))
 }
 
-const login_success = (req, res) => {
-    res.render('login_success')
-}
-
 const delete_val = (req, res) => {
     if (ObjectId.isValid(req.params.id)) {
         Login.findByIdAndDelete(req.params.id)
@@ -29,7 +25,6 @@ const get_val = (req, res) => {
 
 module.exports = {
     create_login,
-    login_success,
     delete_val,
     get_val
 }

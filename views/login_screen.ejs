@@ -68,10 +68,10 @@ all_data.forEach(value => passwordArray.push(value.password))
     const dataEmail = btn.dataset.email
     const dataPassword = btn.dataset.password
 
-    btn.addEventListener('click', () => {
+    const arrayOfEmails = dataEmail.split(',')
+    const arrayOfPasswords = dataPassword.split(',')
 
-        const arrayOfEmails = dataEmail.split(',')
-        const arrayOfPasswords = dataPassword.split(',')
+    btn.addEventListener('click', () => {
 
         if (email_value !== undefined && password_value !== undefined) {
 
@@ -88,12 +88,10 @@ all_data.forEach(value => passwordArray.push(value.password))
             })
             if (isLoginSuccess) {
                 isLoginSuccess = false
-                window.location.href = '/login/login_success'
-            }
-            else passwordRight.innerHTML = 'Email or password is incorrect'
+                window.location.href = '/login_success'
+            } else passwordRight.innerHTML = 'Email or password is incorrect'
 
-        }else { passwordRight.innerHTML = 'Please fill the both section'}
-
+        } else  passwordRight.innerHTML = 'Please fill the both section'
     })
 
 </script>

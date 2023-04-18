@@ -5,7 +5,6 @@ const controllers = require('../controllers/loginController')
 
 //get requests
 router.get('/',controllers.create_login)
-router.get('/login_success',controllers.login_success)
 router.get('/get_all_values',controllers.get_val)
 
 //delete requests
