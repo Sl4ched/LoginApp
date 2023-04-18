@@ -22,3 +22,12 @@ app.use(('/login'),loginRouters)
 app.use(('/register'),registerRouters)
 
 app.use(('/login_success'),loginSuccessRoutes)
+
+app.get('/', (req, res) => {
+    res.redirect('/register')
+})
+
+app.use((req, res, next)=> {
+    res.status(404).render('404')
+    next()
+})
