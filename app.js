@@ -11,7 +11,7 @@ const loginRouters = require('./routers/loginRouters')
 const registerRouters = require('./routers/registerRoute')
 const loginSuccessRoutes = require('./routers/lastScreenRoutes')
 
-const url = 'mongodb+srv://Slached:254857Os@mysite.n8xf8lg.mongodb.net/loginDB'
+const url = ''
 
 mongoose.connect(url)
     .then(() => app.listen(3000))
